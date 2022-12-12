@@ -1,2 +1,2 @@
 # amplify-petstore
-#petstore experiment
+# petstore experiment
