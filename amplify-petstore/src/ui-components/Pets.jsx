@@ -23,7 +23,7 @@ export default function Pets(props) {
   return (
     <Collection
       type="list"
-      isSearchable={true}
+      isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Search..."
       itemsPerPage={6}

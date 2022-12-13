@@ -23,14 +23,14 @@ export default function AddPet(props) {
     <Flex
       gap="16px"
       direction="column"
-      width="509px"
-      height="865px"
+      width="499px"
+      height="883px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       borderRadius="25px"
-      padding="0px 0px 0px 0px"
-      backgroundColor="rgba(215,217,135,1)"
+      padding="3px 60px 0px 0px"
+      backgroundColor="rgba(135,217,178,1)"
       {...rest}
       {...getOverrideProps(overrides, "AddPet")}
     >
@@ -38,13 +38,13 @@ export default function AddPet(props) {
         gap="24px"
         direction="column"
         width="unset"
-        height="unset"
+        height="880px"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
         position="relative"
-        padding="24px 24px 24px 24px"
+        padding="24px 24px 0px 24px"
         {...getOverrideProps(overrides, "Content")}
       >
         <Flex
@@ -146,7 +146,7 @@ export default function AddPet(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider29766917")}
+          {...getOverrideProps(overrides, "Divider")}
         ></Divider>
         <Image
           width="96px"
@@ -165,12 +165,11 @@ export default function AddPet(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="unset"
+          width="451px"
           height="unset"
           justifyContent="flex-start"
           alignItems="flex-start"
           shrink="0"
-          alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Forms")}
@@ -252,7 +251,7 @@ export default function AddPet(props) {
           gap="16px"
           direction="row"
           width="unset"
-          height="unset"
+          height="109px"
           justifyContent="flex-start"
           alignItems="center"
           shrink="0"
@@ -264,7 +263,7 @@ export default function AddPet(props) {
           <Flex
             gap="40px"
             direction="row"
-            width="unset"
+            width="245px"
             height="unset"
             justifyContent="flex-start"
             alignItems="flex-start"
@@ -287,23 +286,16 @@ export default function AddPet(props) {
             <Button
               gap="20px"
               width="79px"
-              padding="8px 20px 8px 20px"
+              padding="7px 19px 7px 19px"
               shrink="0"
               size="default"
-              isDisabled={true}
+              isDisabled={false}
               variation="primary"
-              {...getOverrideProps(overrides, "Button34712723")}
+              children="Update"
+              {...getOverrideProps(overrides, "Button35712712")}
             ></Button>
           </Flex>
         </Flex>
-        <Divider
-          width="unset"
-          shrink="0"
-          alignSelf="stretch"
-          size="small"
-          orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider29766925")}
-        ></Divider>
       </Flex>
     </Flex>
   );
