@@ -7,7 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Icon, Image, Text } from "@aws-amplify/ui-react";
+import { Button, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function NavBar(props) {
   const { overrides, ...rest } = props;
   return (
@@ -108,6 +108,17 @@ export default function NavBar(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 32129767081")}
       >
+        <View {...getOverrideProps(overrides, "Slice 1")}></View>
+        <Button
+          width="172px"
+          height="39px"
+          shrink="0"
+          size="small"
+          isDisabled={false}
+          variation="primary"
+          children="signout"
+          {...getOverrideProps(overrides, "Button")}
+        ></Button>
         <Image
           width="45px"
           height="45px"

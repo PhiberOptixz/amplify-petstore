@@ -1,10 +1,18 @@
+import { useState } from 'react';
 import './App.css';
 
 import { Footer, NavBar, PetProfile, Pets } from './ui-components';
 import {AddPet } from './ui-components';
 
-function App() {
+import { withAuthenticator } from '@aws-amplify/ui-react'
+
+function App({user, signOut}) {
+  const [showForm, setShowForm] = useState(false)
+
   const overridesNavBar = {
+    Button: {
+      onClick: signOut,
+    },
     image: {
       src: "https://img.icons8.com/color/50/000000/cat"
     },
@@ -13,7 +21,7 @@ function App() {
         cursor: "pointer",
       },
       onClick: () => {
-        alert("Hello")
+        setShowForm(!showForm)
       },
     },
   }
@@ -30,11 +38,19 @@ function App() {
           )
         }
         />
-        <AddPet />
+        {
+          showForm && (
+            <AddPet 
+              style={{
+                  textAlign: "left",
+                  margin: "1rem",
+                }}
+                />
+          )}
       </header>
       <Footer width={"100"}/>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

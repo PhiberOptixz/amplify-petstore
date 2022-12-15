@@ -33,6 +33,7 @@ export { default as HeroLayout3 } from "./HeroLayout3";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as FAQItem } from "./FAQItem";
 export { default as ProductDetail } from "./ProductDetail";
+export { default as Component1 } from "./Component1";
 export { default as studioTheme } from "./studioTheme";
 export { default as PetCreateForm } from "./PetCreateForm";
 export { default as PetUpdateForm } from "./PetUpdateForm";

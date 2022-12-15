@@ -1,4 +1,4 @@
-type Pet @model @auth(rules: [{allow: public}]) {
+type Pet @model @auth(rules: [{allow: public}, {allow: owner, operations: [create, update, delete]}]) {
   id: ID!
   name: String!
   age: Int
@@ -7,3 +7,4 @@ type Pet @model @auth(rules: [{allow: public}]) {
   image: String
   color: String
 }
+ 

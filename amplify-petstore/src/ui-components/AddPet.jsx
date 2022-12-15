@@ -6,7 +6,13 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import { Pet } from "../models";
+import {
+  getOverrideProps,
+  useDataStoreCreateAction,
+  useStateMutationAction,
+} from "@aws-amplify/ui-react/internal";
+import { schema } from "../models/schema";
 import {
   Button,
   Divider,
@@ -18,18 +24,55 @@ import {
   View,
 } from "@aws-amplify/ui-react";
 export default function AddPet(props) {
-  const { overrides, ...rest } = props;
+  const { pet, overrides, ...rest } = props;
+  const [
+    textFieldTwoNineSevenSixSixNineTwoTwoValue,
+    setTextFieldTwoNineSevenSixSixNineTwoTwoValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldTwoNineSevenSixSixNineTwoThreeValue,
+    setTextFieldTwoNineSevenSixSixNineTwoThreeValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldTwoNineSevenSixSixNineTwoFourValue,
+    setTextFieldTwoNineSevenSixSixNineTwoFourValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeFourSevenOneTwoSixEightSevenValue,
+    setTextFieldThreeFourSevenOneTwoSixEightSevenValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeFourSevenOneTwoSevenZeroSixValue,
+    setTextFieldThreeFourSevenOneTwoSevenZeroSixValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeFourSevenOneTwoSixNineFourValue,
+    setTextFieldThreeFourSevenOneTwoSixNineFourValue,
+  ] = useStateMutationAction("");
+  const buttonThreeFourSevenOneTwoSevenOneThreeOnClick =
+    useDataStoreCreateAction({
+      fields: {
+        name: textFieldTwoNineSevenSixSixNineTwoTwoValue,
+        age: textFieldTwoNineSevenSixSixNineTwoThreeValue,
+        breed: textFieldTwoNineSevenSixSixNineTwoFourValue,
+        about: textFieldThreeFourSevenOneTwoSixEightSevenValue,
+        image: textFieldThreeFourSevenOneTwoSevenZeroSixValue,
+        color: textFieldThreeFourSevenOneTwoSixNineFourValue,
+      },
+      model: Pet,
+      schema: schema,
+    });
   return (
     <Flex
       gap="16px"
       direction="column"
-      width="499px"
-      height="883px"
+      width="537px"
+      height="901px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       borderRadius="25px"
-      padding="3px 60px 0px 0px"
+      padding="3px 63px 0px 0px"
       backgroundColor="rgba(135,217,178,1)"
       {...rest}
       {...getOverrideProps(overrides, "AddPet")}
@@ -160,6 +203,7 @@ export default function AddPet(props) {
           borderRadius="160px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src={pet?.image}
           {...getOverrideProps(overrides, "image")}
         ></Image>
         <Flex
@@ -184,6 +228,10 @@ export default function AddPet(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldTwoNineSevenSixSixNineTwoTwoValue}
+            onChange={(event) => {
+              setTextFieldTwoNineSevenSixSixNineTwoTwoValue(event.target.value);
+            }}
             {...getOverrideProps(overrides, "TextField29766922")}
           ></TextField>
           <TextField
@@ -196,6 +244,12 @@ export default function AddPet(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldTwoNineSevenSixSixNineTwoThreeValue}
+            onChange={(event) => {
+              setTextFieldTwoNineSevenSixSixNineTwoThreeValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField29766923")}
           ></TextField>
           <TextField
@@ -208,6 +262,12 @@ export default function AddPet(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldTwoNineSevenSixSixNineTwoFourValue}
+            onChange={(event) => {
+              setTextFieldTwoNineSevenSixSixNineTwoFourValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField29766924")}
           ></TextField>
           <TextField
@@ -220,6 +280,12 @@ export default function AddPet(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeFourSevenOneTwoSixEightSevenValue}
+            onChange={(event) => {
+              setTextFieldThreeFourSevenOneTwoSixEightSevenValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField34712687")}
           ></TextField>
           <TextField
@@ -232,6 +298,12 @@ export default function AddPet(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeFourSevenOneTwoSixNineFourValue}
+            onChange={(event) => {
+              setTextFieldThreeFourSevenOneTwoSixNineFourValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField34712694")}
           ></TextField>
           <TextField
@@ -244,6 +316,12 @@ export default function AddPet(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeFourSevenOneTwoSevenZeroSixValue}
+            onChange={(event) => {
+              setTextFieldThreeFourSevenOneTwoSevenZeroSixValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField34712706")}
           ></TextField>
         </Flex>
@@ -281,6 +359,9 @@ export default function AddPet(props) {
               isDisabled={false}
               variation="primary"
               children="Save"
+              onClick={() => {
+                buttonThreeFourSevenOneTwoSevenOneThreeOnClick();
+              }}
               {...getOverrideProps(overrides, "Button34712713")}
             ></Button>
             <Button

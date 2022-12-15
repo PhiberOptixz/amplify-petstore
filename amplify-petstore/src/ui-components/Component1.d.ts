@@ -5,12 +5,9 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Pet } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type AddPetProps = React.PropsWithChildren<Partial<FlexProps> & {
-    pet?: Pet;
-} & {
+import { ViewProps } from "@aws-amplify/ui-react";
+export declare type Component1Props = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function AddPet(props: AddPetProps): React.ReactElement;
+export default function Component1(props: Component1Props): React.ReactElement;
