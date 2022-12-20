@@ -1,17 +1,25 @@
 import { useState } from 'react';
 import './App.css';
 
-import { Footer, NavBar, PetProfile, Pets } from './ui-components';
+import { Footer, NavBar, Pets } from './ui-components';
 import {AddPet } from './ui-components';
 
 import { withAuthenticator } from '@aws-amplify/ui-react'
+
+
+import { Storage } from "@aws-amplify/storage"
+
+
+const asyncFunc = async () => {
+  await Storage.put("test.txt", "Hello");
+}
 
 function App({user, signOut}) {
   const [showForm, setShowForm] = useState(false)
 
   const overridesNavBar = {
     Button: {
-      onClick: signOut,
+      onClick: {asyncFunc},
     },
     image: {
       src: "https://img.icons8.com/color/50/000000/cat"
